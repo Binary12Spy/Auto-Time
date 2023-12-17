@@ -17,21 +17,21 @@ Currently the entered Actitime credentials are stored plain text in the browsers
 
 ### Actitime endpoints used
 
-1. `/users/me`
+1. GET `/users/me`
     * When the user submits thier Actitime credentials, we validate them with this endpoint and also retireve the Actitime UserID which will be needed for a later endpoint
 
-1. `/leaveTypes`
+1. GET `/leaveTypes`
     * Query params: `offset=0&limit=1000&archived=false`
     * Retrns the leave types for your organization
 
-1. `/users/{uid}/schedule`
+1. GET `/users/{uid}/schedule`
     * Query params: `dateFrom={start-date}&dateTo={end-date}`
     * Returns the uses scheduled minutes from a defined start date and end date. This data is used to determine corporarte holidays and otherwise non-working days
 
-1. `/tasks`
+1. GET `/tasks`
     * Query params: `offset=0&limit=1000&status=open`
     * Returns all tasks available to user. Auto-Time groups these under the "CustomerName" field.
 
-1. `/batch`
+1. POST `/batch`
     * Query params: `includeResponseBody=always`
     * Used to apply the generated Timetrack shcedule.
