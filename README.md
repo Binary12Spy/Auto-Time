@@ -10,7 +10,7 @@ A project that:
 
 ### Setup
 
-Auto-Time consists of static HTML, CSS, and JS files. Simply modify the `ACTITIME_BASE_URL` constant in `actitime.js` to match your company's URL and host them with the http(s) server of your choice.  
+Auto-Time consists of static HTML, CSS, and JS files. Simply modify the `ACTITIME_BASE_URL` constant in `actitime.js` to match your company's URL and host the static files with the http(s) server of your choice.  
 
 Actitime uses HTTP Basic authentication for it's REST API endpoints so the goal of this project was to keep all data entered in the browser.
 Currently the entered Actitime credentials are stored plain text in the browsers Session Storage for use bwteen API calls, all other information exists in ram.
