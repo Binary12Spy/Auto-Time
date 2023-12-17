@@ -15,7 +15,7 @@ Auto-Time consists of static HTML, CSS, and JS files. Just modify the `actitime.
 Actitime uses HTTP Basic authentication for it's REST API endpoints so the goal of this project was to keep all data entered in the browser.
 Currently the entered Actitime credentials are stored plain text in the browsers Session Storage for use bwteen API calls, all other information exists in ram.
 
-### Endpoints used
+### Actitime endpoints used
 
 1. `/users/me`
     * When the user submits thier Actitime credentials, we validate them with this endpoint and also retireve the Actitime UserID which will be needed for a later endpoint
