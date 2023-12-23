@@ -29,7 +29,7 @@ TIME_OFF_ENTRY_HTML = `
 var CALENDAR
 
 // When the page loads, show the authentication modal
-$(document).ready(function() {
+$(document).ready(function () {
     var myModalEl = document.getElementById('calendarModal')
     myModalEl.addEventListener('shown.bs.modal', function () {
         CALENDAR.render();
@@ -53,6 +53,12 @@ $(document).ready(function() {
     // If the user has already logged in, fill the username and password fields
     $('#actitimeUsername').val(sessionStorage.getItem("actitimeUsername"));
     $('#actitimePassword').val(sessionStorage.getItem("actitimePassword"));
+});
+
+$(document).keypress(function (e) {
+    if ($("#authenticationModal").hasClass('show') && (e.keycode == 13 || e.which == 13)) {
+        $("#btnAuthenticationModalSubmit").click()
+    }
 });
 
 async function submitLoginModal() {
@@ -251,8 +257,7 @@ async function applyTimeTrack() {
             alert("Timetrack failed to apply!");
         }
     }
-    else
-    {
+    else {
         $("#calendarModal").modal("hide");
     }
 }
