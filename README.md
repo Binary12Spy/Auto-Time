@@ -10,28 +10,28 @@ A project that:
 
 ### Setup
 
-Auto-Time consists of static HTML, CSS, and JS files. Just modify the `actitime.js` file to have your company name and host them with the http(s) server of your choice.  
+Auto-Time consists of static HTML, CSS, and JS files. Simply modify the `ACTITIME_BASE_URL` constant in `actitime.js` to match your company's URL and host the static files with the http(s) server of your choice.  
 
 Actitime uses HTTP Basic authentication for it's REST API endpoints so the goal of this project was to keep all data entered in the browser.
 Currently the entered Actitime credentials are stored plain text in the browsers Session Storage for use bwteen API calls, all other information exists in ram.
 
-### Endpoints used
+### Actitime endpoints used
 
-1. `/users/me`
+1. GET `/users/me`
     * When the user submits thier Actitime credentials, we validate them with this endpoint and also retireve the Actitime UserID which will be needed for a later endpoint
 
-1. `/leaveTypes`
+1. GET `/leaveTypes`
     * Query params: `offset=0&limit=1000&archived=false`
     * Retrns the leave types for your organization
 
-1. `/users/{uid}/schedule`
+1. GET `/users/{uid}/schedule`
     * Query params: `dateFrom={start-date}&dateTo={end-date}`
     * Returns the uses scheduled minutes from a defined start date and end date. This data is used to determine corporarte holidays and otherwise non-working days
 
-1. `/tasks`
+1. GET `/tasks`
     * Query params: `offset=0&limit=1000&status=open`
     * Returns all tasks available to user. Auto-Time groups these under the "CustomerName" field.
 
-1. `/batch`
+1. POST `/batch`
     * Query params: `includeResponseBody=always`
     * Used to apply the generated Timetrack shcedule.
