@@ -4,8 +4,8 @@ A project that:
 1. Interfaces with [Actitime](https://www.actitime.com/)'s open [REST API](https://online.actitime.com/your-company-here/api/v1/swagger) endpoints
 1. Generates times for selected tasks with a (currently hardcoded) variance based off % of time share each task has in your 8 hour day
 1. Accepts time off based on a float value of hours
-1. Generates a "Timetrack" schedule within a given date range, respecting company holidays, your provided time off, based upon the entered time share between selected tasks
-1. Previews the generated schedule on a fancy little calendar in a modal
+1. Generates a "Timetrack" schedule within a given date range, respecting company holidays and your entered time off, based upon the entered time share between selected tasks
+1. Previews the generated schedule on a fancy little calendar
 1. If the user chooses, also applies the generated Timetrack schedule to Actitime automagically
 
 ### Setup
